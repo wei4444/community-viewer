@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <title>社区发现可视化</title>
+
+    <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='echarts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='echarts-gl.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+</head>
+
+<body style="height: 100%">
+    <div class="top">
+        <form method="post" id="form1">
+            <label for="node_label">节点标签</label>
+            <input type="text" name="node_label">
+            <label for="node_weight">节点权重</label>
+            <input type="text" name="node_weight" placeholder="可省略">
+            <label for="node_name">节点名称</label>
+            <input type="text" name="node_name"><br>
+
+            <label for="rel_label">关系标签</label>
+            <input type="text" name="rel_label">
+            <label for="rel_weight">关系权重</label>
+            <input type="text" name="rel_weight" placeholder="可省略"><br>
+
+            <label for="select_method">选择模型</label>
+            <select name="select_method">
+                <option value="LP">LPA</option>
+                <option value="Louvain">Louvain</option>
+            </select>
+            <label for="select_orient">选择方向</label>
+            <select name="select_orient">
+                <option value="UNDIRECTED">无向</option>
+                <option value="NATURAL">有向</option>
+            </select>
+            <input type="submit" value="运行模型">
+        </form>
+
+        <div id="slideDown">
+            <br>
+            <form method="post" id="form2">
+                <input type="text" id="search_name" placeholder="请输入节点名称">
+                <input type="submit" value="搜索">
+            </form>
+            <form method="post" id="form3">
+                <input type="text" id="search_name_2" placeholder="请输入节点名称">
+                <input type="submit" value="搜索">
+            </form>
+            <button id="recover">还原</button>
+        </div>
+
+        <div id="slideDown2">
+            <br>
+            <form method="post" id="form4">
+                <input type="text" id="search_name_3" placeholder="请输入节点名称">
+                <input type="submit" value="搜索">
+            </form>
+            <button id="recover2">还原</button>
+            <p id="warning">因数据量过大，使用graphGL展示数据。部分功能不可用。</p>
+        </div>
+    </div>
+    <br>
+    <div id="container" style="height: 90%; width: 95%"></div>
+
+    <footer>
+        <br>
+    </footer>
+</body>
+
+</html>

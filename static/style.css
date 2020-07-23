@@ -1,0 +1,52 @@
+input[type=text], select {
+    width: 120px;
+    height: 29px;
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit], button {
+    width: auto;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover, button:hover {
+    background-color: #45a049;
+}
+
+.top {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+#form2, #form3, #form4 {
+    display: inline;
+}
+
+#slideDown, #slideDown2 {
+    display: none;
+}
+
+#warning {
+    color: grey;
+    font-size: 10px;
+    padding: 5px;
+    margin: 5px;
+    display: inline;
+}
+
+#container {
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+}
